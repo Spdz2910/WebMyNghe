@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DuyThinh" Class="Data1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.User1" Member="User1s">
+    <Type Name="User1">
+      <Column Name="MaUser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ADMIN" Member="ADMINs">
+    <Type Name="ADMIN">
+      <Column Name="User_Admin" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ho_ten" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CT_DonHang" Member="CT_DonHangs">
+    <Type Name="CT_DonHang">
+      <Column Name="MaCT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaDevice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Association Name="Device_CT_DonHang" Member="Device" ThisKey="MaDevice" OtherKey="MaDevice" Type="Device" IsForeignKey="true" />
+      <Association Name="Don_Dat_Hang_CT_DonHang" Member="Don_Dat_Hang" ThisKey="MaDH" OtherKey="MaDH" Type="Don_Dat_Hang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTiet" Member="ChiTiets">
+    <Type Name="ChiTiet">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDev" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DacDiem" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IMG" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Device_ChiTiet" Member="Device" ThisKey="MaDev" OtherKey="MaDevice" Type="Device" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChuDe" Member="ChuDes">
+    <Type Name="ChuDe">
+      <Column Name="MaCD" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenChuDE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="ChuDe_Device" Member="Devices" ThisKey="MaCD" OtherKey="MaCD" Type="Device" />
+      <Association Name="ChuDe_ICON" Member="ICONs" ThisKey="MaCD" OtherKey="MACD" Type="ICON" />
+      <Association Name="ChuDe_titleCD" Member="titleCDs" ThisKey="MaCD" OtherKey="MaCD" Type="titleCD" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Device" Member="Devices">
+    <Type Name="Device">
+      <Column Name="MaDevice" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDevice" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaBan" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AnhBia" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NgayCapNhat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNSX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Device_CT_DonHang" Member="CT_DonHangs" ThisKey="MaDevice" OtherKey="MaDevice" Type="CT_DonHang" />
+      <Association Name="Device_ChiTiet" Member="ChiTiets" ThisKey="MaDevice" OtherKey="MaDev" Type="ChiTiet" />
+      <Association Name="Device_Sheet1" Member="Sheet1s" ThisKey="MaDevice" OtherKey="MaDev" Type="Sheet1" />
+      <Association Name="ChuDe_Device" Member="ChuDe" ThisKey="MaCD" OtherKey="MaCD" Type="ChuDe" IsForeignKey="true" />
+      <Association Name="Nha_San_Xuat_Device" Member="Nha_San_Xuat" ThisKey="MaNSX" OtherKey="MaNSX" Type="Nha_San_Xuat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Don_Dat_Hang" Member="Don_Dat_Hangs">
+    <Type Name="Don_Dat_Hang">
+      <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayDH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayGiao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DaThanhToan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TinhTrangGiaoHang" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Don_Dat_Hang_CT_DonHang" Member="CT_DonHangs" ThisKey="MaDH" OtherKey="MaDH" Type="CT_DonHang" />
+      <Association Name="Khach_Hang_Don_Dat_Hang" Member="Khach_Hang" ThisKey="MaKH" OtherKey="MaKH" Type="Khach_Hang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ICON" Member="ICONs">
+    <Type Name="ICON">
+      <Column Name="MaSp" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IMG_ICON" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MACD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="ChuDe_ICON" Member="ChuDe" ThisKey="MACD" OtherKey="MaCD" Type="ChuDe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Khach_Hang" Member="Khach_Hangs">
+    <Type Name="Khach_Hang">
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Khach_Hang_Don_Dat_Hang" Member="Don_Dat_Hangs" ThisKey="MaKH" OtherKey="MaKH" Type="Don_Dat_Hang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nha_San_Xuat" Member="Nha_San_Xuats">
+    <Type Name="Nha_San_Xuat">
+      <Column Name="MaNSX" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNSX" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Nha_San_Xuat_Device" Member="Devices" ThisKey="MaNSX" OtherKey="MaNSX" Type="Device" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sheet1" Member="Sheet1s">
+    <Type Name="Sheet1">
+      <Column Name="MaDev" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaChiTiet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChatLieu" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="KichThuoc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DacDiem" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MauSac" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Association Name="Device_Sheet1" Member="Device" ThisKey="MaDev" OtherKey="MaDevice" Type="Device" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.titleCD" Member="titleCDs">
+    <Type Name="titleCD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IMG" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="ChuDe_titleCD" Member="ChuDe" ThisKey="MaCD" OtherKey="MaCD" Type="ChuDe" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,53 @@
+﻿@model _2001207328_NguyenDuyThinh.Models.device_head
+@{
+    ViewBag.Title = "SPChuDe";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div style="background-color:#e3e4e5;height:100px;margin-top:-19px;padding-left:200px;padding-right:200px;" class="container">
+    <div class="" style="height:100px;">
+        <ul class="nav nav-justified">
+            @{
+                foreach (var i in Model.icon)
+                {
+                    <li style="margin-right:30px;margin-left:50px;">
+                        <a style="padding-top:10px;text-align:center" href="@Url.Action("ChitietSP","Home",new { id = @i.MaSp})">
+                            <div>
+                                <img src="~/image/ICON/@i.IMG_ICON" />
+                            </div>
+                            @if (@i.MACD == 5)
+                            {
+                                <span style="font-size:12px; display:block">@i.Name</span>
+                            }
+                            else
+                            {
+                                <span>@i.Name</span>
+                            }
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:50px;">
+    <hr />
+    @{
+
+        foreach (var i in Model.device)
+        {
+
+            <div class="col-md-4 text-center" style="padding:20px 20px 20px">
+                <div>
+                    <img src="~/image/DEVICE/@i.AnhBia" style="width:170px;height:170px" />
+                </div>
+                <div>
+                    <h4>@i.TenDevice</h4>
+                    <h4 style="color:red">@String.Format("{0:0,0}", @i.GiaBan * 22000) VND</h4>
+                    @Html.ActionLink("Learn More", "ChitietSP1", new { id = @i.MaDevice })
+
+                </div>
+            </div>
+        }
+    }
+</div>
+

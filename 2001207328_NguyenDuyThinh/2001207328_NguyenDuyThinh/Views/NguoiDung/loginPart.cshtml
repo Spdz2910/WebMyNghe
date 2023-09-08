@@ -1,0 +1,17 @@
+﻿@model _2001207328_NguyenDuyThinh.Models.Khach_Hang
+<li>
+    @if (Model == null)
+    {
+        <a href="@Url.Action("Dangnhap","NguoiDung")">
+            Đăng Nhập
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    }
+    else
+    {
+        <a href="@Url.Action("Dangnhap","NguoiDung")">
+            @Model.TaiKhoan
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    }
+</li>

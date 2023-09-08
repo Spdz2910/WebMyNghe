@@ -1,0 +1,88 @@
+﻿@model _2001207328_NguyenDuyThinh.Areas.admin.Models.deviceDetail
+@{
+    ViewBag.Title = "ChiTietSp1";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="container">
+    <div style="text-align:center">
+        <h3>@Model.detailD.TenDevice</h3>
+    </div>
+    <hr />
+    <div id="left" class="col-md-8">
+        <h3>Thông tin chi tiết</h3>
+        <div class="col-md-4">
+            <img src="~/image/DEVICE/@Model.detailD.AnhBia" style="width:100%" />
+        </div>
+        <div class="col-md-8">
+            <table class="table-bordered col-md-12">
+                <tr>
+                    <td>Tên thiết bị</td>
+                    <td>@Model.detailD.TenDevice</td>
+                </tr>
+                <tr>
+                    <td>Danh mục</td>
+                    <td>@Model.detailD.ChuDe.TenChuDE</td>
+                </tr>
+                <tr>
+                    <td>Giá bán</td>
+                    <td>@Model.detailD.GiaBan</td>
+                </tr>
+                <tr>
+                    <td>Nhà sản xuất</td>
+                    <td>@Model.detailD.Nha_San_Xuat.TenNSX</td>
+                </tr>
+            </table>
+            <div class="col-md-12">
+                <hr />
+                <p>@Model.detailD.MoTa</p>
+            </div>
+            <div class="col-md-12">
+                <hr />
+
+                <h3 style="color:red">Giá: @String.Format("{0:0,0}",@Model.detailD.GiaBan * 22000) VND</h3>
+                <a href="@Url.Action("Buy","GioHang",new { id = Model.detailD.MaDevice})" class="btn btn-primary" role="button">Buy</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="right" class="col-md-4">
+
+        <h3>Thông số sản phẩm</h3>
+
+
+        <table class="table-bordered">
+            <tbody>
+
+                <tr>
+                    <td class="col-md-6">Chất liệu</td>
+                    <td class="col-md-6">@Model.detailS.ChatLieu</td>
+                </tr>
+                <tr>
+                    <td class="col-md-6">Kích thước </td>
+                    <td class="col-md-6">@Model.detailS.KichThuoc</td>
+                </tr>
+                <tr>
+                    <td class="col-md-6">Đặc điểm</td>
+                    <td class="col-md-6">@Model.detailS.DacDiem</td>
+                </tr>
+                <tr>
+                    <td class="col-md-6">Giá</td>
+                    <td class="col-md-6">@Model.detailS.Gia</td>
+                </tr>
+                <tr>
+                    <td class="col-md-6">Màu sắc</td>
+                    <td class="col-md-6">@Model.detailS.MauSac</td>
+                </tr>
+            </tbody>
+        </table>
+        @*<table class="table-bordered col-md-12">
+            @foreach (var i in Model.sheet)
+            {
+                <tr>
+                    <td style="background-color:@i.MauSac" class="col-md-3"></td>
+                </tr>
+            }
+        </table>*@
+    </div>
+    <hr />
+</div>

@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<style type="text/css">
+    td {
+        text-align: right;
+        padding-right: 20px;
+    }
+</style>
+<h3 style="text-align:center">Đăng ký thành viên</h3>
+<hr />
+<table align="center">
+    @using (Html.BeginForm("Dangky", "NguoiDung", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true){
+            <tr style="height:40px;">
+                <td>Tên đăng nhập:</td>
+                <td>
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="example" name="TaiKhoan">
+                </td>
+                <td id="wn">
+                    @ViewData["loi1"]
+                </td>
+            </tr>
+            <tr style="height:40px;">
+                <td>Mật khẩu:</td>
+                <td>
+                    <input type="password" class="form-control" id="inputEmail3" placeholder="***********" name="Matkhau">
+                </td>
+                <td id="wn">
+                    @ViewData["loi2"]
+                </td>
+            </tr>
+            <tr style="height:40px;">
+                <td>Nhập lại mật khẩu:</td>
+                <td>
+                    <input type="password" class="form-control" id="inputEmail3" placeholder="***********" name="MatKhauNhapLai">
+                </td>
+                <td id="wn">
+                    @ViewData["loi3"]
+                </td>
+            </tr>
+            <tr style="height:40px;">
+                <td>Điện thoại:</td>
+                <td>
+                    <input type="number" class="form-control" id="inputEmail3" placeholder="087798672" name="DienThoai">
+                </td>
+                <td id="wn">
+                    @ViewData["loi4"]
+                </td>
+            </tr>
+            <tr style="height:40px;">
+                <td>Email:</td>
+                <td>
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="example@gmail.com" name="Email">
+                </td>
+                <td id="wn">
+                    @ViewData["loi5"]
+                </td>
+            </tr>
+            <tr style="height:40px;">
+                <td>Ngày sinh:</td>
+                <td>
+                    <input type="date" class="form-control" id="inputEmail3" name="Ngaysinh">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" value="Đăng Ký" class="btn btn-success" style="margin-top:10px">Đăng Ký</button>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<style>
+    #wn {
+        color: red;
+    }
+</style>
+

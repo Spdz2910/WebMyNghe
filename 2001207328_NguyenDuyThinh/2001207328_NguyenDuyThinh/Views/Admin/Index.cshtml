@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+        @ViewData["loi"];
+        <div class="col-md-5">
+            <h2 class="form-signin-heading">Please sign in</h2>
+
+            <input type="text" id="inputEmail" class="form-control" placeholder="Email address" name="email">
+
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </div>
+        <div class="col-md-6" style="height:500px">
+            <img src="~/image/career_318-64289.jpg" style="height:100%" />
+        </div>
+
+    }
+
+
+</div> <!-- /container -->

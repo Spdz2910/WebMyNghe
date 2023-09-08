@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Dangnhap";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<style type="text/css">
+    td {
+        text-align: right;
+        padding-right: 20px;
+    }
+</style>
+<h4 style="color:red;text-align:center">@ViewBag.Thongbao</h4>
+<h3 style="text-align:center">Đăng nhập</h3>
+<hr />
+<table align="center">
+
+    @using (Html.BeginForm("Dangnhap", "NguoiDung", new { returnUrl = "https://localhost:44391/Giohang/GioHang" }, FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px;">
+            <td>Tên đăng nhập:</td>
+            <td>
+                <input type="email" class="form-control" id="inputEmail3" placeholder="example@gmail.com" name="TenDN">
+            </td>
+            <td id="wn">
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+        <tr style="height:40px;">
+            <td>Mật khẩu:</td>
+            <td>
+                <input type="password" class="form-control" id="inputEmail3" placeholder="*************" name="Matkhau">
+            </td>
+            <td id="wn">
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        <tr style="height:40px;">
+            <td></td>
+            <td>
+                <input type="submit" class="btn btn-success" value="Đăng nhập">
+                <a href="@Url.Action("DangKy","NguoiDung")">Đăng ký nếu chưa có tài khoản</a>
+            </td>
+        </tr>
+    }
+</table>
+<style>
+    #wn {
+        color: red;
+    }
+</style>

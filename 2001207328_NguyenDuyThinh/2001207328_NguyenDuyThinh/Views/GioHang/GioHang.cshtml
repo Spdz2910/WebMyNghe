@@ -1,0 +1,59 @@
+﻿@using _2001207328_NguyenDuyThinh.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<h2 style="text-align:center">Giỏ Hàng</h2>
+<div class="col-md-10 col-md-offset-1" style="height:100px;text-align:center">
+    <h3>Giao hàng miễn phí</h3>
+</div>
+@if (Model != null)
+{
+    <div class="container">
+        <table class="col-md-12 table-bordered">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="col-md-1">@item.chitiet.MaChiTiet</td>
+                    <td class="col-md-1">@item.sTen</td>
+                    <td class="col-md-2"><img src="~/image/DEVICE/@item.sAnhbia" style="width:100%" /></td>
+                    <td class="col-md-3">
+                        <ul>
+                            <li>@item.chitiet.ChatLieu</li>
+                            <li>@item.chitiet.KichThuoc</li>
+                            <li>@item.chitiet.DacDiem</li>
+                            <li>@item.chitiet.MauSac</li>
+                            <li>@item.chitiet.Gia</li>
+                            <li style="background-color:@item.chitiet.MauSac"></li>
+                        </ul>
+                    </td>
+                    @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { iMasp = @item.chitiet.MaChiTiet }))
+                    {
+                        <td class="col-md-1">
+                            <input type="number" min="1" name="txtSoluong" value="@item.iSoluong" style="width:70%" class="input-group-sm" />
+                        </td>
+                        <td class="col-md-1">@String.Format("{0:0,0}", @Int64.Parse((@item.dDongia * 2200).ToString()))</td>
+                        <td class="col-md-1">@String.Format("{0:0,0}", @item.dThanhtien)</td>
+                        <td class="col-md-1"><a href="@Url.Action("ChitietSP1","Home",new { id = @item.iMa})">Chi tiết</a></td>
+                        <td class="col-md-1">@Html.ActionLink("Xóa", "XoaGiohang", new { iMasp = @item.chitiet.MaChiTiet })</td>
+                        <td class="col-md-1"><input type="submit" value="cập nhật" class="btn btn-success" /></td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="container">
+        <h4 colspan="3"> Số lượng: @ViewBag.Tongsoluong</h4>
+        <h4 colspan="3"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VND</h4>
+        @Html.ActionLink("Xóa giỏ hàng", "XoaAll") |
+        @Html.ActionLink("Đặt hàng", "Dathang", "GioHang")
+    </div>
+}
+else
+{
+    <div>
+        empty
+    </div>
+}
+

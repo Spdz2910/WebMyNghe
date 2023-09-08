@@ -1,0 +1,475 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3128FEA-88CC-4A96-BCC2-4F2D0D5FDA43}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_2001207328_NguyenDuyThinh</RootNamespace>
+    <AssemblyName>2001207328_NguyenDuyThinh</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\admin\Views\Shared\signin.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\shop-homepage.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="image\B15140-FR-01_wqxga.jpg" />
+    <Content Include="image\bia_TinTuc\bia1.jpg" />
+    <Content Include="image\bia_TinTuc\bia1.png" />
+    <Content Include="image\bia_TinTuc\bia10.jpg" />
+    <Content Include="image\bia_TinTuc\bia2.jpg" />
+    <Content Include="image\bia_TinTuc\bia2.png" />
+    <Content Include="image\bia_TinTuc\bia3.jpg" />
+    <Content Include="image\bia_TinTuc\bia4.jpg" />
+    <Content Include="image\bia_TinTuc\bia5.jpg" />
+    <Content Include="image\bia_TinTuc\bia6.jpg" />
+    <Content Include="image\bia_TinTuc\bia7.jpg" />
+    <Content Include="image\bia_TinTuc\bia8.jpg" />
+    <Content Include="image\bia_TinTuc\bia9.jpg" />
+    <Content Include="image\career_318-64289.jpg" />
+    <Content Include="image\CHI_TIET\121.jpg" />
+    <Content Include="image\CHI_TIET\122.jpg" />
+    <Content Include="image\CHI_TIET\123.png" />
+    <Content Include="image\CHI_TIET\124.jpg" />
+    <Content Include="image\CHI_TIET\141.jpg" />
+    <Content Include="image\CHI_TIET\142.jpg" />
+    <Content Include="image\CHI_TIET\143.jpg" />
+    <Content Include="image\CHI_TIET\161.jpg" />
+    <Content Include="image\CHI_TIET\162.jpg" />
+    <Content Include="image\CHI_TIET\163.jpg" />
+    <Content Include="image\CHI_TIET\164.jpg" />
+    <Content Include="image\CHI_TIET\165.jpg" />
+    <Content Include="image\CHI_TIET\166.jpg" />
+    <Content Include="image\CHI_TIET\171.jpg" />
+    <Content Include="image\CHI_TIET\172.jpg" />
+    <Content Include="image\CHI_TIET\173.jpg" />
+    <Content Include="image\CHI_TIET\174.jpg" />
+    <Content Include="image\CHI_TIET\181.jpg" />
+    <Content Include="image\CHI_TIET\182.jpg" />
+    <Content Include="image\CHI_TIET\183.jpg" />
+    <Content Include="image\CHI_TIET\184.jpg" />
+    <Content Include="image\CHI_TIET\185.jpg" />
+    <Content Include="image\CHI_TIET\186.jpg" />
+    <Content Include="image\CHI_TIET\187.jpg" />
+    <Content Include="image\CHI_TIET\188.jpg" />
+    <Content Include="image\CHI_TIET\211.jpg" />
+    <Content Include="image\CHI_TIET\212.jpg" />
+    <Content Include="image\CHI_TIET\213.png" />
+    <Content Include="image\CHI_TIET\214.jpg" />
+    <Content Include="image\CHI_TIET\215.jpg" />
+    <Content Include="image\CHI_TIET\216.jpg" />
+    <Content Include="image\CHI_TIET\217.jpg" />
+    <Content Include="image\CHI_TIET\218.jpg" />
+    <Content Include="image\CHI_TIET\219.jpg" />
+    <Content Include="image\CHI_TIET\231.jpg" />
+    <Content Include="image\CHI_TIET\232.jpg" />
+    <Content Include="image\CHI_TIET\233.png" />
+    <Content Include="image\CHI_TIET\234.jpg" />
+    <Content Include="image\CHI_TIET\241.jpg" />
+    <Content Include="image\CHI_TIET\242.jpg" />
+    <Content Include="image\CHI_TIET\243.jpg" />
+    <Content Include="image\CHI_TIET\244.jpg" />
+    <Content Include="image\CHI_TIET\245.jpg" />
+    <Content Include="image\CHI_TIET\246.jpg" />
+    <Content Include="image\CHI_TIET\247.jpg" />
+    <Content Include="image\CHI_TIET\248.jpg" />
+    <Content Include="image\CHI_TIET\249.jpg" />
+    <Content Include="image\CHI_TIET\251.jpg" />
+    <Content Include="image\CHI_TIET\252.jpg" />
+    <Content Include="image\CHI_TIET\253.jpg" />
+    <Content Include="image\CHI_TIET\254.jpg" />
+    <Content Include="image\CHI_TIET\255.jpg" />
+    <Content Include="image\CHI_TIET\256.jpg" />
+    <Content Include="image\CHI_TIET\257.jpg" />
+    <Content Include="image\CHI_TIET\258.jpg" />
+    <Content Include="image\CHI_TIET\259.jpg" />
+    <Content Include="image\CHI_TIET\261.jpg" />
+    <Content Include="image\CHI_TIET\262.jpg" />
+    <Content Include="image\CHI_TIET\263.jpg" />
+    <Content Include="image\CHI_TIET\271.jpg" />
+    <Content Include="image\CHI_TIET\272.jpg" />
+    <Content Include="image\CHI_TIET\273.jpg" />
+    <Content Include="image\CHI_TIET\301.jpg" />
+    <Content Include="image\CHI_TIET\302.jpg" />
+    <Content Include="image\CHI_TIET\303.jpg" />
+    <Content Include="image\CHI_TIET\601.jpg" />
+    <Content Include="image\CHI_TIET\602.jpg" />
+    <Content Include="image\CHI_TIET\603.jpg" />
+    <Content Include="image\CHI_TIET\801.jpg" />
+    <Content Include="image\CHI_TIET\802.jpg" />
+    <Content Include="image\CHI_TIET\803.jpg" />
+    <Content Include="image\CHI_TIET\804.jpg" />
+    <Content Include="image\CHI_TIET\805.jpg" />
+    <Content Include="image\CHI_TIET\806.jpg" />
+    <Content Include="image\CHI_TIET\807.jpg" />
+    <Content Include="image\CHI_TIET\808.jpg" />
+    <Content Include="image\CHI_TIET\809.jpg" />
+    <Content Include="image\chon.jpg" />
+    <Content Include="image\DEVICE\1.png" />
+    <Content Include="image\DEVICE\10.png" />
+    <Content Include="image\DEVICE\11.png" />
+    <Content Include="image\DEVICE\12.png" />
+    <Content Include="image\DEVICE\13.png" />
+    <Content Include="image\DEVICE\14.png" />
+    <Content Include="image\DEVICE\15.png" />
+    <Content Include="image\DEVICE\16.png" />
+    <Content Include="image\DEVICE\17.png" />
+    <Content Include="image\DEVICE\18.png" />
+    <Content Include="image\DEVICE\19.png" />
+    <Content Include="image\DEVICE\2.png" />
+    <Content Include="image\DEVICE\20.png" />
+    <Content Include="image\DEVICE\21.png" />
+    <Content Include="image\DEVICE\22.png" />
+    <Content Include="image\DEVICE\23.png" />
+    <Content Include="image\DEVICE\24.png" />
+    <Content Include="image\DEVICE\25.png" />
+    <Content Include="image\DEVICE\26.png" />
+    <Content Include="image\DEVICE\27.png" />
+    <Content Include="image\DEVICE\28.png" />
+    <Content Include="image\DEVICE\29.png" />
+    <Content Include="image\DEVICE\3 %281%29.jpg" />
+    <Content Include="image\DEVICE\3.png" />
+    <Content Include="image\DEVICE\30.png" />
+    <Content Include="image\DEVICE\31.png" />
+    <Content Include="image\DEVICE\32.png" />
+    <Content Include="image\DEVICE\33.png" />
+    <Content Include="image\DEVICE\34.png" />
+    <Content Include="image\DEVICE\35.png" />
+    <Content Include="image\DEVICE\36.jpg" />
+    <Content Include="image\DEVICE\37.png" />
+    <Content Include="image\DEVICE\38.jpg" />
+    <Content Include="image\DEVICE\39.png" />
+    <Content Include="image\DEVICE\4.png" />
+    <Content Include="image\DEVICE\40.png" />
+    <Content Include="image\DEVICE\5.png" />
+    <Content Include="image\DEVICE\6.png" />
+    <Content Include="image\DEVICE\6478512085_1cd74ebbf5_o.jpg" />
+    <Content Include="image\DEVICE\7.png" />
+    <Content Include="image\DEVICE\8.png" />
+    <Content Include="image\DEVICE\9.png" />
+    <Content Include="image\DEVICE\apple_watch_2x.png" />
+    <Content Include="image\DEVICE\Capture.PNG" />
+    <Content Include="image\DEVICE\imac_2x.png" />
+    <Content Include="image\DEVICE\performance_large.jpg" />
+    <Content Include="image\DEVICE\àdasfasdf.png" />
+    <Content Include="image\ICON\aw1.png" />
+    <Content Include="image\ICON\aw2.png" />
+    <Content Include="image\ICON\awe.png" />
+    <Content Include="image\ICON\awh.png" />
+    <Content Include="image\ICON\awnike.png" />
+    <Content Include="image\ICON\imac.png" />
+    <Content Include="image\ICON\ip5se.svg" />
+    <Content Include="image\ICON\ip6s.svg" />
+    <Content Include="image\ICON\ip7.svg" />
+    <Content Include="image\ICON\ipadm.svg" />
+    <Content Include="image\ICON\ipadp.svg" />
+    <Content Include="image\ICON\macpro.png" />
+    <Content Include="image\ICON\mba.png" />
+    <Content Include="image\ICON\mbp.png" />
+    <Content Include="image\khang.jpg" />
+    <Content Include="image\q.jpg" />
+    <Content Include="image\slide2.jpg" />
+    <Content Include="image\today_xlarge.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="Models\Data1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Data1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <None Include="Models\Data1.dbml.layout">
+      <DependentUpon>Data1.dbml</DependentUpon>
+    </None>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="tinymce\changelog.txt" />
+    <Content Include="tinymce\js\tinymce\jquery.tinymce.min.js" />
+    <Content Include="tinymce\js\tinymce\license.txt" />
+    <Content Include="tinymce\js\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="tinymce\js\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\img\logo.png" />
+    <Content Include="tinymce\js\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\toc\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="tinymce\js\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\themes\inlite\theme.min.js" />
+    <Content Include="tinymce\js\tinymce\themes\modern\theme.min.js" />
+    <Content Include="tinymce\js\tinymce\tinymce.min.js" />
+    <Content Include="tinymce\LICENSE.TXT" />
+    <Content Include="Web.config" />
+    <Content Include="tinymce\js\tinymce\langs\readme.md" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\SPChuDe.cshtml" />
+    <Content Include="Views\Home\ChiTietSp.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
+    <Content Include="Views\NguoiDung\loginPart.cshtml" />
+    <Content Include="Views\NguoiDung\Dangnhap.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\admin\Models\deviceDetail.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\device_head.cs" />
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\New_Hot.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\ChiTietSp1.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GiohangPartial.cshtml" />
+    <Content Include="Views\GioHang\Xacnhandonhang.cshtml" />
+    <Content Include="Views\GioHang\thongTinGiaoHang.cshtml" />
+    <Content Include="Views\GioHang\Buy.cshtml" />
+    <Content Include="Views\GioHang\Dathang.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\device.cshtml" />
+    <Content Include="Views\Admin\admin_home.cshtml" />
+    <Content Include="Views\Admin\CreatNew.cshtml" />
+    <Content Include="Views\Admin\Detail.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\user.cshtml" />
+    <Content Include="Views\Admin\donHang.cshtml" />
+    <Content Include="Views\Admin\chitiet.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Controllers\" />
+    <Folder Include="Areas\admin\Views\Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56791</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44391/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

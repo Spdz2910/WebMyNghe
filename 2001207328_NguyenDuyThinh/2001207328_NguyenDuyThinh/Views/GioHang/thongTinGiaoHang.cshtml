@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "thongTinGiaoHang";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1" style="height:200px;">
+        <div id="left" class="col-md-6">
+            <div style="padding-top:50px">
+                <a href="@Url.Action("DangNhap", "NguoiDung")" class="btn btn-primary col-md-10">Login để tiếp tục mua hàng</a>
+            </div>
+
+            <div style="padding-top:100px">
+                <a href="@Url.Action("DangKy","NguoiDung")" class="btn btn-success col-md-10">Sign Up để tiếp tục mua hàng</a>
+            </div>
+        </div>
+
+        <div id="right" class="col-md-6" style="height:200px;">
+
+            <div style="padding-top:50px">
+                <h3>@Html.ActionLink("Trở về giỏ hàng", "GioHang", "GioHang")</h3>
+            </div>
+            <div>
+                <a href="@Url.Action("checkOut","GioHang")" class="btn btn-primary col-md-10">Tiếp tục với tư cách là khách</a>
+            </div>
+        </div>
+    </div>
+</div>
+
